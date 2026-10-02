@@ -333,37 +333,6 @@
           margin: 0
         });
 
-        // 4. Header-Right Badge ("HỆ THỐNG ÔN TẬP GDQP-AN")
-        const headerBadgeEl = headerEl.querySelector('.header-badge');
-        const badgeText = headerBadgeEl ? getCleanText(headerBadgeEl) : 'HỆ THỐNG ÔN TẬP GDQP-AN';
-        const hBadgeW = pxToInch(330);
-        const hBadgeH = pxToInch(42);
-        const hBadgeX = PPTX_WIDTH_INCH - hBadgeW - pxToInch(54);
-        const hBadgeY = pxToInch(22);
-
-        slide.addShape(pptxInstance.shapes.ROUNDED_RECTANGLE, {
-          x: hBadgeX,
-          y: hBadgeY,
-          w: hBadgeW,
-          h: hBadgeH,
-          fill: { color: '144482' },
-          line: { color: '2E60A3', width: 1.2 },
-          rectRadius: 0.5,
-          shadow: { type: 'outer', color: '000000', blur: 4, offset: 1.5, angle: 90, opacity: 0.15 }
-        });
-        slide.addText(badgeText, {
-          x: hBadgeX,
-          y: hBadgeY,
-          w: hBadgeW,
-          h: hBadgeH,
-          fontFace: 'Times New Roman',
-          fontSize: 11,
-          bold: true,
-          color: 'FFFFFF',
-          align: 'center',
-          valign: 'middle',
-          margin: 0
-        });
       }
 
       // =========================================================================
