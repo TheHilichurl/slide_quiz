@@ -392,7 +392,7 @@
           });
         }
 
-        // 2.2 Question Title (Full Width, Auto-wrap, Times New Roman 22.5pt bold - exact web proportion)
+        // 2.2 Question Title (Full Width, Auto-wrap, Times New Roman 20pt bold - perfectly fitted)
         const titleEl = slideEl.querySelector('.quiz-question-title');
         if (titleEl) {
           const tBox = getBox(titleEl);
@@ -405,10 +405,10 @@
             w: titleW,
             h: titleH,
             fontFace: 'Times New Roman',
-            fontSize: 22.5,
+            fontSize: 20,
             bold: true,
             color: '0F172A',
-            lineSpacingMultiple: 1.15,
+            lineSpacingMultiple: 1.18,
             valign: 'top',
             wrap: true,
             margin: 0
@@ -449,7 +449,7 @@
             const circleCs = window.getComputedStyle(letterCircleEl);
             const circleBg = parseCssColor(circleCs.backgroundColor, 'EA580C')?.hex || 'EA580C';
             const circleColor = parseCssColor(circleCs.color, 'FFFFFF')?.hex || 'FFFFFF';
-            const circleSize = pxToInch(46);
+            const circleSize = pxToInch(44);
             const circleX = oBox.x + pxToInch(18);
             const circleY = oBox.y + (oBox.h - circleSize) / 2;
 
@@ -467,7 +467,7 @@
               w: circleSize,
               h: circleSize,
               fontFace: 'Times New Roman',
-              fontSize: 18,
+              fontSize: 16.5,
               bold: true,
               color: circleColor,
               align: 'center',
@@ -475,7 +475,7 @@
               margin: 0
             });
           } else if (letterPlainEl) {
-            // Plain letter (A., B., C., D.) - 20pt bold matching web 35px
+            // Plain letter (A., B., C., D.) - 18pt bold
             const lcs = window.getComputedStyle(letterPlainEl);
             const lColor = parseCssColor(lcs.color, isDimmed ? '94A3B8' : '003882')?.hex || (isDimmed ? '94A3B8' : '003882');
             slide.addText(letterText, {
@@ -484,7 +484,7 @@
               w: pxToInch(48),
               h: oBox.h,
               fontFace: 'Times New Roman',
-              fontSize: 20,
+              fontSize: 18,
               bold: true,
               color: lColor,
               valign: 'middle',
@@ -492,7 +492,7 @@
             });
           }
 
-          // Option Text Body - Proportional 18.5pt with generous width
+          // Option Text Body - Proportional 16.5pt perfectly contained inside card box
           const optTextEl = optEl.querySelector('.opt-text');
           if (optTextEl) {
             const tcs = window.getComputedStyle(optTextEl);
@@ -510,9 +510,10 @@
               w: textWidth,
               h: oBox.h,
               fontFace: 'Times New Roman',
-              fontSize: 18.5,
+              fontSize: 16.5,
               bold: textBold,
               color: textColor,
+              lineSpacingMultiple: 1.15,
               valign: 'middle',
               wrap: true,
               margin: 0
