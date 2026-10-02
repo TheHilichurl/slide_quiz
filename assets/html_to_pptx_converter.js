@@ -306,18 +306,23 @@
           }
         }
 
-        // 2. Vertical Divider between Logo and Slogan
+        // 2. Orange Rounded Capsule Divider between Logo and Slogan
+        const dividerW = pxToInch(7);
+        const dividerH = pxToInch(38);
         const dividerX = logoEndX + pxToInch(18);
-        slide.addShape(pptxInstance.shapes.LINE, {
+        const dividerY = pxToInch(24);
+        slide.addShape(pptxInstance.shapes.ROUNDED_RECTANGLE, {
           x: dividerX,
-          y: pxToInch(24),
-          w: 0,
-          h: pxToInch(38),
-          line: { color: '4B72A4', width: 1.5 }
+          y: dividerY,
+          w: dividerW,
+          h: dividerH,
+          fill: { color: 'FF7A00' },
+          line: { type: 'none' },
+          rectRadius: 0.5
         });
 
         // 3. Slogan Text ("HỌC ĐỂ THAY ĐỔI") immediately following Logo & Divider
-        const sloganX = dividerX + pxToInch(18);
+        const sloganX = dividerX + dividerW + pxToInch(16);
         slide.addText('HỌC ĐỂ THAY ĐỔI', {
           x: sloganX,
           y: pxToInch(16),

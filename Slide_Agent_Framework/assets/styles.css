@@ -165,10 +165,11 @@ html, body {
 }
 
 .header-divider {
-  width: 2px;
+  width: 7px;
   height: 38px;
-  background: rgba(255, 255, 255, 0.35);
-  border-radius: 1px;
+  background: #FF7A00;
+  border-radius: 4px;
+  flex-shrink: 0;
 }
 
 .brand-slogan {
