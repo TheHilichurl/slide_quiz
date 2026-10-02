@@ -301,6 +301,7 @@
           const text = getCleanText(qBadge) || `CÂU HỎI ${String(slideIndex).padStart(2, '0')}`;
           const bgCol = parseCssColor(cs.backgroundColor, '003882')?.hex || '003882';
 
+          // Standardized 10px rounded rectangle (rectRadius: 0.05) matching HTML DOM
           slide.addShape(pptxInstance.shapes.ROUNDED_RECTANGLE, {
             x: bBox.x,
             y: bBox.y,
@@ -308,7 +309,7 @@
             h: bBox.h,
             fill: { color: bgCol },
             line: { type: 'none' },
-            rectRadius: 0.35
+            rectRadius: 0.05
           });
           slide.addText(text, {
             x: bBox.x,
@@ -316,7 +317,7 @@
             w: bBox.w,
             h: bBox.h,
             fontFace: 'Times New Roman',
-            fontSize: 16.5,
+            fontSize: 13.5,
             bold: true,
             color: 'FFFFFF',
             align: 'center',
@@ -331,6 +332,7 @@
           const text = getCleanText(aBadge) || `ĐÁP ÁN CÂU ${String(Math.ceil(slideIndex / 2)).padStart(2, '0')}`;
           const bgCol = parseCssColor(cs.backgroundColor, 'EA580C')?.hex || 'EA580C';
 
+          // Standardized 10px rounded rectangle (rectRadius: 0.05) matching HTML DOM
           slide.addShape(pptxInstance.shapes.ROUNDED_RECTANGLE, {
             x: bBox.x,
             y: bBox.y,
@@ -338,7 +340,7 @@
             h: bBox.h,
             fill: { color: bgCol },
             line: { type: 'none' },
-            rectRadius: 0.35
+            rectRadius: 0.05
           });
           slide.addText(text, {
             x: bBox.x,
@@ -346,7 +348,7 @@
             w: bBox.w,
             h: bBox.h,
             fontFace: 'Times New Roman',
-            fontSize: 16.5,
+            fontSize: 13.5,
             bold: true,
             color: 'FFFFFF',
             align: 'center',
@@ -374,7 +376,7 @@
             h: bBox.h,
             fill: { color: bgCol },
             line: { color: lineCol, width: 1.5 },
-            rectRadius: 0.35
+            rectRadius: 0.05
           });
           slide.addText(text, {
             x: badgeX,
@@ -382,7 +384,7 @@
             w: badgeW,
             h: bBox.h,
             fontFace: 'Times New Roman',
-            fontSize: 14,
+            fontSize: 12.5,
             bold: true,
             color: textCol,
             align: 'center',
@@ -435,7 +437,7 @@
             h: oBox.h,
             fill: { color: cardFill },
             line: { color: cardBorderColor, width: cardBorderWidth },
-            rectRadius: 0.15
+            rectRadius: 0.07
           });
 
           // Check if option has circle letter or plain letter
@@ -445,12 +447,12 @@
           const correctTagEl = optEl.querySelector('.quiz-correct-tag');
 
           if (letterCircleEl) {
-            // Circle letter badge (computed style matches theme: Orange #EA580C or Emerald #10B981)
+            // Circle letter badge: exact 50px DOM size, 15pt bold centered
             const circleCs = window.getComputedStyle(letterCircleEl);
             const circleBg = parseCssColor(circleCs.backgroundColor, 'EA580C')?.hex || 'EA580C';
             const circleColor = parseCssColor(circleCs.color, 'FFFFFF')?.hex || 'FFFFFF';
-            const circleSize = pxToInch(44);
-            const circleX = oBox.x + pxToInch(18);
+            const circleSize = pxToInch(50);
+            const circleX = oBox.x + pxToInch(20);
             const circleY = oBox.y + (oBox.h - circleSize) / 2;
 
             slide.addShape(pptxInstance.shapes.OVAL, {
@@ -467,7 +469,7 @@
               w: circleSize,
               h: circleSize,
               fontFace: 'Times New Roman',
-              fontSize: 16.5,
+              fontSize: 15,
               bold: true,
               color: circleColor,
               align: 'center',
@@ -520,14 +522,15 @@
             });
           }
 
-          // Correct Tag Badge ("ĐÁP ÁN ĐÚNG") - single-line width, exact DOM color
+          // Correct Tag Badge ("ĐÁP ÁN ĐÚNG") - Standardized 8px rounded rectangle (rectRadius: 0.05), exact DOM metrics
           if (correctTagEl) {
             const tagCs = window.getComputedStyle(correctTagEl);
             const tagBg = parseCssColor(tagCs.backgroundColor, 'EA580C')?.hex || 'EA580C';
             const tagTextColor = parseCssColor(tagCs.color, 'FFFFFF')?.hex || 'FFFFFF';
-            const tagW = Math.max(pxToInch(190), getBox(correctTagEl)?.w || pxToInch(190));
-            const tagH = pxToInch(36);
-            const tagX = oBox.x + oBox.w - tagW - pxToInch(18);
+            const tagBox = getBox(correctTagEl);
+            const tagW = tagBox ? Math.max(tagBox.w, pxToInch(197)) : pxToInch(197);
+            const tagH = tagBox ? tagBox.h : pxToInch(39.4);
+            const tagX = oBox.x + oBox.w - tagW - pxToInch(22);
             const tagY = oBox.y + (oBox.h - tagH) / 2;
 
             slide.addShape(pptxInstance.shapes.ROUNDED_RECTANGLE, {
@@ -537,7 +540,7 @@
               h: tagH,
               fill: { color: tagBg },
               line: { type: 'none' },
-              rectRadius: 0.4
+              rectRadius: 0.05
             });
             slide.addText(getCleanText(correctTagEl) || 'ĐÁP ÁN ĐÚNG', {
               x: tagX,
@@ -545,7 +548,7 @@
               w: tagW,
               h: tagH,
               fontFace: 'Times New Roman',
-              fontSize: 12,
+              fontSize: 11.5,
               bold: true,
               color: tagTextColor,
               align: 'center',
