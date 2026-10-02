@@ -23,6 +23,21 @@
       font-family: 'Times New Roman', Times, serif !important;
     }
   </style>
+  <!-- Immediate Asset Preloading for Zero Latency -->
+  <script>
+    (function() {
+      const assetUrls = ['assets/dai-nam-logo-ngang.svg', 'assets/vn-ba-thu-quan.jpg', 'assets/vn-cscd-dac-nhiem.jpg', 'assets/vn-dan-quan-tu-ve.jpg', 'assets/vn-hiep-dong-llvt.jpg', 'assets/vn-hoi-truong-dien-hong.jpg', 'assets/vn-phao-binh-bo-bien.jpg', 'assets/vn-su30mk2.jpg', 'assets/vn-tang-thiet-giap.jpg', 'assets/vn-ten-lua-phong-khong.jpg', 'assets/war-russia-ukraine.jpg'];
+      assetUrls.forEach(function(url) {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = url;
+        document.head.appendChild(link);
+        const img = new Image();
+        img.src = url;
+      });
+    })();
+  </script>
 </head>
 <body>
 
@@ -83,7 +98,7 @@
 
             <div class="quiz-visual-col">
               <div class="quiz-visual-card">
-                <img src="assets/war-russia-ukraine.jpg" alt="Xung đột quân sự hiện đại Nga - Ukraine" class="quiz-visual-img">
+                <img src="assets/war-russia-ukraine.jpg" alt="Xung đột quân sự hiện đại Nga - Ukraine" class="quiz-visual-img" loading="eager" decoding="async">
               </div>
             </div>
           </div>
@@ -147,7 +162,7 @@
 
             <div class="quiz-visual-col">
               <div class="quiz-visual-card correct-visual">
-                <img src="assets/war-russia-ukraine.jpg" alt="Xung đột quân sự hiện đại Nga - Ukraine" class="quiz-visual-img">
+                <img src="assets/war-russia-ukraine.jpg" alt="Xung đột quân sự hiện đại Nga - Ukraine" class="quiz-visual-img" loading="eager" decoding="async">
               </div>
             </div>
           </div>
@@ -209,7 +224,7 @@
 
             <div class="quiz-visual-col">
               <div class="quiz-visual-card">
-                <img src="assets/vn-ba-thu-quan.jpg" alt="Ba thứ quân Lực lượng vũ trang nhân dân Việt Nam" class="quiz-visual-img">
+                <img src="assets/vn-ba-thu-quan.jpg" alt="Ba thứ quân Lực lượng vũ trang nhân dân Việt Nam" class="quiz-visual-img" loading="eager" decoding="async">
               </div>
             </div>
           </div>
@@ -273,7 +288,7 @@
 
             <div class="quiz-visual-col">
               <div class="quiz-visual-card correct-visual">
-                <img src="assets/vn-ba-thu-quan.jpg" alt="Ba thứ quân Lực lượng vũ trang nhân dân Việt Nam" class="quiz-visual-img">
+                <img src="assets/vn-ba-thu-quan.jpg" alt="Ba thứ quân Lực lượng vũ trang nhân dân Việt Nam" class="quiz-visual-img" loading="eager" decoding="async">
               </div>
             </div>
           </div>
@@ -335,7 +350,7 @@
 
             <div class="quiz-visual-col">
               <div class="quiz-visual-card">
-                <img src="assets/vn-cscd-dac-nhiem.jpg" alt="Cảnh sát cơ động đặc nhiệm bảo vệ an ninh trật tự" class="quiz-visual-img">
+                <img src="assets/vn-cscd-dac-nhiem.jpg" alt="Cảnh sát cơ động đặc nhiệm bảo vệ an ninh trật tự" class="quiz-visual-img" loading="eager" decoding="async">
               </div>
             </div>
           </div>
@@ -399,7 +414,7 @@
 
             <div class="quiz-visual-col">
               <div class="quiz-visual-card correct-visual">
-                <img src="assets/vn-cscd-dac-nhiem.jpg" alt="Cảnh sát cơ động đặc nhiệm bảo vệ an ninh trật tự" class="quiz-visual-img">
+                <img src="assets/vn-cscd-dac-nhiem.jpg" alt="Cảnh sát cơ động đặc nhiệm bảo vệ an ninh trật tự" class="quiz-visual-img" loading="eager" decoding="async">
               </div>
             </div>
           </div>
@@ -461,7 +476,7 @@
 
             <div class="quiz-visual-col">
               <div class="quiz-visual-card">
-                <img src="assets/vn-su30mk2.jpg" alt="Tiêm kích Su-30MK2 Không quân nhân dân Việt Nam" class="quiz-visual-img">
+                <img src="assets/vn-su30mk2.jpg" alt="Tiêm kích Su-30MK2 Không quân nhân dân Việt Nam" class="quiz-visual-img" loading="eager" decoding="async">
               </div>
             </div>
           </div>
@@ -525,7 +540,7 @@
 
             <div class="quiz-visual-col">
               <div class="quiz-visual-card correct-visual">
-                <img src="assets/vn-su30mk2.jpg" alt="Tiêm kích Su-30MK2 Không quân nhân dân Việt Nam" class="quiz-visual-img">
+                <img src="assets/vn-su30mk2.jpg" alt="Tiêm kích Su-30MK2 Không quân nhân dân Việt Nam" class="quiz-visual-img" loading="eager" decoding="async">
               </div>
             </div>
           </div>
@@ -587,7 +602,7 @@
 
             <div class="quiz-visual-col">
               <div class="quiz-visual-card">
-                <img src="assets/vn-ten-lua-phong-khong.jpg" alt="Tổ hợp tên lửa phòng không công nghệ cao tác chiến chính xác" class="quiz-visual-img">
+                <img src="assets/vn-ten-lua-phong-khong.jpg" alt="Tổ hợp tên lửa phòng không công nghệ cao tác chiến chính xác" class="quiz-visual-img" loading="eager" decoding="async">
               </div>
             </div>
           </div>
@@ -651,7 +666,7 @@
 
             <div class="quiz-visual-col">
               <div class="quiz-visual-card correct-visual">
-                <img src="assets/vn-ten-lua-phong-khong.jpg" alt="Tổ hợp tên lửa phòng không công nghệ cao tác chiến chính xác" class="quiz-visual-img">
+                <img src="assets/vn-ten-lua-phong-khong.jpg" alt="Tổ hợp tên lửa phòng không công nghệ cao tác chiến chính xác" class="quiz-visual-img" loading="eager" decoding="async">
               </div>
             </div>
           </div>
@@ -713,7 +728,7 @@
 
             <div class="quiz-visual-col">
               <div class="quiz-visual-card">
-                <img src="assets/vn-dan-quan-tu-ve.jpg" alt="Dân quân tự vệ Việt Nam huấn luyện sẵn sàng chiến đấu" class="quiz-visual-img">
+                <img src="assets/vn-dan-quan-tu-ve.jpg" alt="Dân quân tự vệ Việt Nam huấn luyện sẵn sàng chiến đấu" class="quiz-visual-img" loading="eager" decoding="async">
               </div>
             </div>
           </div>
@@ -777,7 +792,7 @@
 
             <div class="quiz-visual-col">
               <div class="quiz-visual-card correct-visual">
-                <img src="assets/vn-dan-quan-tu-ve.jpg" alt="Dân quân tự vệ Việt Nam huấn luyện sẵn sàng chiến đấu" class="quiz-visual-img">
+                <img src="assets/vn-dan-quan-tu-ve.jpg" alt="Dân quân tự vệ Việt Nam huấn luyện sẵn sàng chiến đấu" class="quiz-visual-img" loading="eager" decoding="async">
               </div>
             </div>
           </div>
@@ -839,7 +854,7 @@
 
             <div class="quiz-visual-col">
               <div class="quiz-visual-card">
-                <img src="assets/vn-phao-binh-bo-bien.jpg" alt="Trận địa pháo binh bờ biển kiên cường đánh lâu dài bảo vệ Tổ quốc" class="quiz-visual-img">
+                <img src="assets/vn-phao-binh-bo-bien.jpg" alt="Trận địa pháo binh bờ biển kiên cường đánh lâu dài bảo vệ Tổ quốc" class="quiz-visual-img" loading="eager" decoding="async">
               </div>
             </div>
           </div>
@@ -903,7 +918,7 @@
 
             <div class="quiz-visual-col">
               <div class="quiz-visual-card correct-visual">
-                <img src="assets/vn-phao-binh-bo-bien.jpg" alt="Trận địa pháo binh bờ biển kiên cường đánh lâu dài bảo vệ Tổ quốc" class="quiz-visual-img">
+                <img src="assets/vn-phao-binh-bo-bien.jpg" alt="Trận địa pháo binh bờ biển kiên cường đánh lâu dài bảo vệ Tổ quốc" class="quiz-visual-img" loading="eager" decoding="async">
               </div>
             </div>
           </div>
@@ -965,7 +980,7 @@
 
             <div class="quiz-visual-col">
               <div class="quiz-visual-card">
-                <img src="assets/vn-hoi-truong-dien-hong.jpg" alt="Hội trường Diên Hồng - Hội nghị Ban Chấp hành Trung ương Đảng" class="quiz-visual-img">
+                <img src="assets/vn-hoi-truong-dien-hong.jpg" alt="Hội trường Diên Hồng - Hội nghị Ban Chấp hành Trung ương Đảng" class="quiz-visual-img" loading="eager" decoding="async">
               </div>
             </div>
           </div>
@@ -1029,7 +1044,7 @@
 
             <div class="quiz-visual-col">
               <div class="quiz-visual-card correct-visual">
-                <img src="assets/vn-hoi-truong-dien-hong.jpg" alt="Hội trường Diên Hồng - Hội nghị Ban Chấp hành Trung ương Đảng" class="quiz-visual-img">
+                <img src="assets/vn-hoi-truong-dien-hong.jpg" alt="Hội trường Diên Hồng - Hội nghị Ban Chấp hành Trung ương Đảng" class="quiz-visual-img" loading="eager" decoding="async">
               </div>
             </div>
           </div>
@@ -1091,7 +1106,7 @@
 
             <div class="quiz-visual-col">
               <div class="quiz-visual-card">
-                <img src="assets/vn-tang-thiet-giap.jpg" alt="Binh chủng Tăng Thiết giáp hiệp đồng quân binh chủng đột kích" class="quiz-visual-img">
+                <img src="assets/vn-tang-thiet-giap.jpg" alt="Binh chủng Tăng Thiết giáp hiệp đồng quân binh chủng đột kích" class="quiz-visual-img" loading="eager" decoding="async">
               </div>
             </div>
           </div>
@@ -1155,7 +1170,7 @@
 
             <div class="quiz-visual-col">
               <div class="quiz-visual-card correct-visual">
-                <img src="assets/vn-tang-thiet-giap.jpg" alt="Binh chủng Tăng Thiết giáp hiệp đồng quân binh chủng đột kích" class="quiz-visual-img">
+                <img src="assets/vn-tang-thiet-giap.jpg" alt="Binh chủng Tăng Thiết giáp hiệp đồng quân binh chủng đột kích" class="quiz-visual-img" loading="eager" decoding="async">
               </div>
             </div>
           </div>
@@ -1217,7 +1232,7 @@
 
             <div class="quiz-visual-col">
               <div class="quiz-visual-card">
-                <img src="assets/vn-hiep-dong-llvt.jpg" alt="Chỉ huy hiệp đồng Quân đội và Cảnh sát cơ động bảo vệ Tổ quốc" class="quiz-visual-img">
+                <img src="assets/vn-hiep-dong-llvt.jpg" alt="Chỉ huy hiệp đồng Quân đội và Cảnh sát cơ động bảo vệ Tổ quốc" class="quiz-visual-img" loading="eager" decoding="async">
               </div>
             </div>
           </div>
@@ -1281,7 +1296,7 @@
 
             <div class="quiz-visual-col">
               <div class="quiz-visual-card correct-visual">
-                <img src="assets/vn-hiep-dong-llvt.jpg" alt="Chỉ huy hiệp đồng Quân đội và Cảnh sát cơ động bảo vệ Tổ quốc" class="quiz-visual-img">
+                <img src="assets/vn-hiep-dong-llvt.jpg" alt="Chỉ huy hiệp đồng Quân đội và Cảnh sát cơ động bảo vệ Tổ quốc" class="quiz-visual-img" loading="eager" decoding="async">
               </div>
             </div>
           </div>

@@ -2377,23 +2377,27 @@ body.exporting-2k .slide-timer-badge {
 
 /* Cột Phải: Visual Media Card (Ảnh sạch sẽ không chữ/overlay) */
 .quiz-visual-col {
-  flex: 1 1 35%;
+  flex: 0 0 35%;
+  width: 35%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-width: 0;
+  min-height: 0;
 }
 
 .quiz-visual-card {
   width: 100%;
-  height: 100%;
-  max-height: 780px;
+  height: 780px;
+  max-height: 100%;
   border-radius: 18px;
   overflow: hidden;
   position: relative;
   background: #0B192C;
   border: 2px solid #CBD5E1;
   box-shadow: var(--shadow-md);
-  display: flex;
+  display: block;
 }
 
 .quiz-visual-card.correct-visual {
@@ -2404,6 +2408,8 @@ body.exporting-2k .slide-timer-badge {
 .quiz-visual-img {
   width: 100%;
   height: 100%;
+  min-width: 100%;
+  min-height: 100%;
   object-fit: cover;
   object-position: center;
   display: block;

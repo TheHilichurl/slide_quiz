@@ -23,6 +23,21 @@
       font-family: 'Times New Roman', Times, serif !important;
     }
   </style>
+  <!-- Immediate Asset Preloading for Zero Latency -->
+  <script>
+    (function() {
+      const assetUrls = ['assets/dai-nam-logo-ngang.svg', 'assets/vn-an-ninh-nhan-dan.jpg', 'assets/vn-ba-dinh.jpg', 'assets/vn-doi-ngoai.jpg', 'assets/vn-gepard-ship.jpg', 'assets/vn-hoi-nghi-quoc-gia.jpg', 'assets/vn-khoa-hoc-cong-nghe.jpg', 'assets/vn-khu-vuc-phong-thu.jpg', 'assets/vn-kinh-te.jpg', 'assets/vn-military-parade.jpg', 'assets/vn-quoc-hoi.jpg'];
+      assetUrls.forEach(function(url) {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = url;
+        document.head.appendChild(link);
+        const img = new Image();
+        img.src = url;
+      });
+    })();
+  </script>
 </head>
 <body>
 
@@ -84,7 +99,7 @@
 
             <div class="quiz-visual-col">
               <div class="quiz-visual-card">
-                <img src="assets/vn-military-parade.jpg" alt="Duyệt binh Quân đội nhân dân Việt Nam" class="quiz-visual-img">
+                <img src="assets/vn-military-parade.jpg" alt="Duyệt binh Quân đội nhân dân Việt Nam" class="quiz-visual-img" loading="eager" decoding="async">
               </div>
             </div>
           </div>
@@ -150,7 +165,7 @@
 
             <div class="quiz-visual-col">
               <div class="quiz-visual-card correct-visual">
-                <img src="assets/vn-military-parade.jpg" alt="Duyệt binh Quân đội nhân dân Việt Nam" class="quiz-visual-img">
+                <img src="assets/vn-military-parade.jpg" alt="Duyệt binh Quân đội nhân dân Việt Nam" class="quiz-visual-img" loading="eager" decoding="async">
               </div>
             </div>
           </div>
@@ -214,7 +229,7 @@
 
             <div class="quiz-visual-col">
               <div class="quiz-visual-card">
-                <img src="assets/vn-kinh-te.jpg" alt="Tiềm lực kinh tế Việt Nam" class="quiz-visual-img">
+                <img src="assets/vn-kinh-te.jpg" alt="Tiềm lực kinh tế Việt Nam" class="quiz-visual-img" loading="eager" decoding="async">
               </div>
             </div>
           </div>
@@ -280,7 +295,7 @@
 
             <div class="quiz-visual-col">
               <div class="quiz-visual-card correct-visual">
-                <img src="assets/vn-kinh-te.jpg" alt="Tiềm lực kinh tế Việt Nam" class="quiz-visual-img">
+                <img src="assets/vn-kinh-te.jpg" alt="Tiềm lực kinh tế Việt Nam" class="quiz-visual-img" loading="eager" decoding="async">
               </div>
             </div>
           </div>
@@ -344,7 +359,7 @@
 
             <div class="quiz-visual-col">
               <div class="quiz-visual-card">
-                <img src="assets/vn-ba-dinh.jpg" alt="Lăng Bác - Ba Đình Hà Nội" class="quiz-visual-img">
+                <img src="assets/vn-ba-dinh.jpg" alt="Lăng Bác - Ba Đình Hà Nội" class="quiz-visual-img" loading="eager" decoding="async">
               </div>
             </div>
           </div>
@@ -410,7 +425,7 @@
 
             <div class="quiz-visual-col">
               <div class="quiz-visual-card correct-visual">
-                <img src="assets/vn-ba-dinh.jpg" alt="Lăng Chủ tịch Hồ Chí Minh" class="quiz-visual-img">
+                <img src="assets/vn-ba-dinh.jpg" alt="Lăng Chủ tịch Hồ Chí Minh" class="quiz-visual-img" loading="eager" decoding="async">
               </div>
             </div>
           </div>
@@ -474,7 +489,7 @@
 
             <div class="quiz-visual-col">
               <div class="quiz-visual-card">
-                <img src="assets/vn-khoa-hoc-cong-nghe.jpg" alt="Radar VRS-U3K Viettel chế tạo" class="quiz-visual-img">
+                <img src="assets/vn-khoa-hoc-cong-nghe.jpg" alt="Radar VRS-U3K Viettel chế tạo" class="quiz-visual-img" loading="eager" decoding="async">
               </div>
             </div>
           </div>
@@ -540,7 +555,7 @@
 
             <div class="quiz-visual-col">
               <div class="quiz-visual-card correct-visual">
-                <img src="assets/vn-khoa-hoc-cong-nghe.jpg" alt="Radar VRS-U3K Viettel" class="quiz-visual-img">
+                <img src="assets/vn-khoa-hoc-cong-nghe.jpg" alt="Radar VRS-U3K Viettel" class="quiz-visual-img" loading="eager" decoding="async">
               </div>
             </div>
           </div>
@@ -604,7 +619,7 @@
 
             <div class="quiz-visual-col">
               <div class="quiz-visual-card">
-                <img src="assets/vn-gepard-ship.jpg" alt="Tàu chiến Gepard 3.9 Trần Hưng Đạo" class="quiz-visual-img">
+                <img src="assets/vn-gepard-ship.jpg" alt="Tàu chiến Gepard 3.9 Trần Hưng Đạo" class="quiz-visual-img" loading="eager" decoding="async">
               </div>
             </div>
           </div>
@@ -670,7 +685,7 @@
 
             <div class="quiz-visual-col">
               <div class="quiz-visual-card correct-visual">
-                <img src="assets/vn-gepard-ship.jpg" alt="Tàu chiến Gepard 3.9" class="quiz-visual-img">
+                <img src="assets/vn-gepard-ship.jpg" alt="Tàu chiến Gepard 3.9" class="quiz-visual-img" loading="eager" decoding="async">
               </div>
             </div>
           </div>
@@ -734,7 +749,7 @@
 
             <div class="quiz-visual-col">
               <div class="quiz-visual-card">
-                <img src="assets/vn-doi-ngoai.jpg" alt="Đối ngoại Việt Nam" class="quiz-visual-img">
+                <img src="assets/vn-doi-ngoai.jpg" alt="Đối ngoại Việt Nam" class="quiz-visual-img" loading="eager" decoding="async">
               </div>
             </div>
           </div>
@@ -800,7 +815,7 @@
 
             <div class="quiz-visual-col">
               <div class="quiz-visual-card correct-visual">
-                <img src="assets/vn-doi-ngoai.jpg" alt="Đối ngoại Việt Nam" class="quiz-visual-img">
+                <img src="assets/vn-doi-ngoai.jpg" alt="Đối ngoại Việt Nam" class="quiz-visual-img" loading="eager" decoding="async">
               </div>
             </div>
           </div>
@@ -864,7 +879,7 @@
 
             <div class="quiz-visual-col">
               <div class="quiz-visual-card">
-                <img src="assets/vn-quoc-hoi.jpg" alt="Tòa nhà Quốc hội Việt Nam" class="quiz-visual-img">
+                <img src="assets/vn-quoc-hoi.jpg" alt="Tòa nhà Quốc hội Việt Nam" class="quiz-visual-img" loading="eager" decoding="async">
               </div>
             </div>
           </div>
@@ -930,7 +945,7 @@
 
             <div class="quiz-visual-col">
               <div class="quiz-visual-card correct-visual">
-                <img src="assets/vn-quoc-hoi.jpg" alt="Tòa nhà Quốc hội" class="quiz-visual-img">
+                <img src="assets/vn-quoc-hoi.jpg" alt="Tòa nhà Quốc hội" class="quiz-visual-img" loading="eager" decoding="async">
               </div>
             </div>
           </div>
@@ -994,7 +1009,7 @@
 
             <div class="quiz-visual-col">
               <div class="quiz-visual-card">
-                <img src="assets/vn-khu-vuc-phong-thu.jpg" alt="Bản đồ địa giới hành chính Việt Nam" class="quiz-visual-img">
+                <img src="assets/vn-khu-vuc-phong-thu.jpg" alt="Bản đồ địa giới hành chính Việt Nam" class="quiz-visual-img" loading="eager" decoding="async">
               </div>
             </div>
           </div>
@@ -1060,7 +1075,7 @@
 
             <div class="quiz-visual-col">
               <div class="quiz-visual-card correct-visual">
-                <img src="assets/vn-khu-vuc-phong-thu.jpg" alt="Phân vùng địa giới Việt Nam" class="quiz-visual-img">
+                <img src="assets/vn-khu-vuc-phong-thu.jpg" alt="Phân vùng địa giới Việt Nam" class="quiz-visual-img" loading="eager" decoding="async">
               </div>
             </div>
           </div>
@@ -1124,7 +1139,7 @@
 
             <div class="quiz-visual-col">
               <div class="quiz-visual-card">
-                <img src="assets/vn-an-ninh-nhan-dan.jpg" alt="Lực lượng Công an Nhân dân Việt Nam" class="quiz-visual-img">
+                <img src="assets/vn-an-ninh-nhan-dan.jpg" alt="Lực lượng Công an Nhân dân Việt Nam" class="quiz-visual-img" loading="eager" decoding="async">
               </div>
             </div>
           </div>
@@ -1190,7 +1205,7 @@
 
             <div class="quiz-visual-col">
               <div class="quiz-visual-card correct-visual">
-                <img src="assets/vn-an-ninh-nhan-dan.jpg" alt="Công an Nhân dân Việt Nam" class="quiz-visual-img">
+                <img src="assets/vn-an-ninh-nhan-dan.jpg" alt="Công an Nhân dân Việt Nam" class="quiz-visual-img" loading="eager" decoding="async">
               </div>
             </div>
           </div>
@@ -1254,7 +1269,7 @@
 
             <div class="quiz-visual-col">
               <div class="quiz-visual-card">
-                <img src="assets/vn-hoi-nghi-quoc-gia.jpg" alt="Trung tâm Hội nghị Quốc gia" class="quiz-visual-img">
+                <img src="assets/vn-hoi-nghi-quoc-gia.jpg" alt="Trung tâm Hội nghị Quốc gia" class="quiz-visual-img" loading="eager" decoding="async">
               </div>
             </div>
           </div>
@@ -1320,7 +1335,7 @@
 
             <div class="quiz-visual-col">
               <div class="quiz-visual-card correct-visual">
-                <img src="assets/vn-hoi-nghi-quoc-gia.jpg" alt="Trung tâm Hội nghị Quốc gia" class="quiz-visual-img">
+                <img src="assets/vn-hoi-nghi-quoc-gia.jpg" alt="Trung tâm Hội nghị Quốc gia" class="quiz-visual-img" loading="eager" decoding="async">
               </div>
             </div>
           </div>
