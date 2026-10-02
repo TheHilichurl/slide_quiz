@@ -75,22 +75,20 @@
 
     .brand-slogan {
       font-weight: bold;
-      font-size: 36px;
+      font-size: 34px;
       text-transform: uppercase;
       color: var(--color-accent-orange);
       letter-spacing: 2px;
       display: flex;
       align-items: center;
-      gap: 14px;
+      white-space: nowrap;
     }
 
-    .brand-slogan::before {
-      content: '';
-      display: inline-block;
-      width: 8px;
-      height: 40px;
-      background: var(--color-accent-orange);
-      border-radius: 4px;
+    .header-divider {
+      width: 2px;
+      height: 38px;
+      background: rgba(255, 255, 255, 0.35);
+      border-radius: 1px;
     }
 
     .portal-badge {
@@ -589,19 +587,20 @@
   <!-- Top Portal Header -->
   <header class="portal-header">
     <div class="header-left-wrap">
+      <img src="assets/dai-nam-logo-ngang.png" alt="Trường Đại học Đại Nam" class="official-logo-img">
+      <div class="header-divider"></div>
       <div class="brand-slogan">HỌC ĐỂ THAY ĐỔI</div>
+    </div>
+
+    <div class="header-right-wrap">
       <div class="portal-badge">
         <i data-lucide="layers" style="width: 18px; height: 18px;"></i>
         <span>HỆ THỐNG BÀI GIẢNG ĐIỆN TỬ</span>
       </div>
-    </div>
-
-    <div class="header-right-wrap">
       <div class="digital-clock-display" id="portal-live-clock">
         <i data-lucide="clock" style="width: 18px; height: 18px;"></i>
         <span id="clock-text">00:00:00</span>
       </div>
-      <img src="assets/dai-nam-logo-ngang.svg" alt="Trường Đại học Đại Nam" class="official-logo-img">
     </div>
   </header>
 

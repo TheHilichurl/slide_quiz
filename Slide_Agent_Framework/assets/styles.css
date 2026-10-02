@@ -118,6 +118,19 @@ html, body {
   z-index: 10;
 }
 
+/* Slide Ambient Background Glow */
+.slide::before {
+  content: '';
+  position: absolute;
+  top: 86px;
+  right: 0;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle at 75% 25%, rgba(234, 88, 12, 0.07) 0%, rgba(0, 56, 130, 0.03) 45%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
 /* ==========================================================================
    MANDATORY HEADER (Cobalt Blue Background)
    ========================================================================== */
@@ -140,28 +153,39 @@ html, body {
 .header-left {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 22px;
+}
+
+.official-logo-img {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+  display: block;
+}
+
+.header-divider {
+  width: 2px;
+  height: 38px;
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 1px;
 }
 
 .brand-slogan {
   font-family: 'Times New Roman', Times, serif !important;
   font-weight: bold;
-  font-size: 39px !important;
+  font-size: 34px !important;
   text-transform: uppercase;
   color: #FF7A00 !important;
   letter-spacing: 2px;
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
+  white-space: nowrap;
 }
 
 .brand-slogan::before {
-  content: '';
-  display: inline-block;
-  width: 8px;
-  height: 42px;
-  background: #FF7A00;
-  border-radius: 4px;
+  display: none !important;
 }
 
 .header-topic-badge {
@@ -171,13 +195,27 @@ html, body {
 .header-right {
   display: flex;
   align-items: center;
+  gap: 16px;
 }
 
-.official-logo-img {
-  height: 56px;
-  width: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+.header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+  padding: 6px 18px;
+  border-radius: 30px;
+  font-family: 'Times New Roman', Times, serif !important;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.header-badge i {
+  color: #FB923C;
 }
 
 /* ==========================================================================

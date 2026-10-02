@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Mẫu Slide Quiz Trắc Nghiệm QPAN - Đại Học Đại Nam</title>
+  <!-- Google Fonts chuẩn tiếng Việt, xuất PPTX không lỗi -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #0f172a;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      padding: 40px 0;
+    }
+
+    /* Khung chuẩn 16:9 full HD (1920x1080 thu nhỏ tỉ lệ về 1280x720 cho nhẹ web và dễ convert) */
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 36px 48px;
+      border-radius: 8px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Hoa văn nền trang trí nhẹ nhàng, tạo chiều sâu */
+    .bg-accent-glow {
+      position: absolute;
+      top: -120px;
+      right: -80px;
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(243, 112, 33, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* 1. HEADER */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+      border-bottom: 1.5px solid #F1F5F9;
+      padding-bottom: 16px;
+    }
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .logo-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-sun {
+      width: 36px;
+      height: 36px;
+      background: #F37021;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFF;
+      font-size: 18px;
+    }
+    .brand-title {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: #F37021;
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+    .brand-sub {
+      font-size: 11px;
+      font-weight: 700;
+      color: #1E293B;
+      letter-spacing: 1.5px;
+    }
+    .header-divider {
+      width: 1.5px;
+      height: 28px;
+      background-color: #E2E8F0;
+    }
+    .slogan-tag {
+      font-size: 13px;
+      font-weight: 700;
+      color: #64748B;
+      background: #F8FAFC;
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid #E2E8F0;
+      letter-spacing: 0.5px;
+    }
+    .quiz-phase-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #FFF7ED;
+      color: #C2410C;
+      border: 1px solid #FFEDD5;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    /* 2. MAIN BODY */
+    .main-body {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      gap: 32px;
+      align-items: stretch;
+      position: relative;
+      z-index: 1;
+      margin: 12px 0;
+      height: 520px;
+    }
+
+    .question-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Câu hỏi & Chủ đề */
+    .topic-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #F37021;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 8px;
+    }
+    .question-box {
+      background: #F8FAFC;
+      border-left: 5px solid #F37021;
+      padding: 16px 20px;
+      border-radius: 0 12px 12px 0;
+      margin-bottom: 18px;
+    }
+    .question-box h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #0F172A;
+      line-height: 1.45;
+    }
+
+    /* Danh sách đáp án */
+    .answers-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .answer-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 16px;
+      border-radius: 12px;
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      transition: all 0.2s ease;
+    }
+    .opt-letter {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: #F1F5F9;
+      color: #475569;
+      font-weight: 800;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .opt-text {
+      font-size: 14px;
+      color: #334155;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    /* Trạng thái đáp án đúng (cho Slide Đáp án) */
+    .answer-card.correct {
+      background: #ECFDF5;
+      border-color: #10B981;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.15);
+    }
+    .answer-card.correct .opt-letter {
+      background: #10B981;
+      color: #FFFFFF;
+    }
+    .answer-card.correct .opt-text {
+      color: #065F46;
+      font-weight: 700;
+    }
+    .correct-tag {
+      margin-left: auto;
+      background: #10B981;
+      color: white;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex-shrink: 0;
+      text-transform: uppercase;
+    }
+
+    /* Trạng thái đáp án sai khi show kết quả (mờ đi tạo độ tập trung) */
+    .answer-card.faded {
+      opacity: 0.45;
+      background: #F8FAFC;
+    }
+
+    /* Cột bên phải: Ảnh + Key Takeaway */
+    .media-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    .image-container {
+      flex: 1;
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+      background-color: #E2E8F0;
+    }
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .image-overlay-badge {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(6px);
+      color: #F8FAFC;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 11px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Khối phân tích sư phạm của giảng viên (rất ăn điểm thi GV giỏi) */
+    .pedagogy-tip {
+      background: #FFF7ED;
+      border: 1px dashed #FDBA74;
+      border-radius: 12px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .pedagogy-tip i {
+      color: #F37021;
+      margin-top: 2px;
+      font-size: 14px;
+    }
+    .pedagogy-tip p {
+      font-size: 12px;
+      color: #9A3412;
+      line-height: 1.4;
+      font-weight: 500;
+    }
+
+    /* 3. FOOTER */
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 14px;
+      border-top: 1.5px solid #F1F5F9;
+      font-size: 12px;
+      color: #64748B;
+      font-weight: 600;
+      position: relative;
+      z-index: 1;
+    }
+    .footer-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .footer-tag {
+      background: #F1F5F9;
+      padding: 3px 8px;
+      border-radius: 4px;
+      color: #334155;
+      font-weight: 700;
+    }
+    .footer-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .web-link {
+      color: #F37021;
+      text-decoration: none;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================== -->
+  <!-- SLIDE 1: TRẠNG THÁI HỎI (CHO HỌC VIÊN SUY NGHĨ) -->
+  <!-- ============================================== -->
+  <div class="slide">
+    <div class="bg-accent-glow"></div>
+
+    <!-- Header -->
+    <header class="header">
+      <div class="brand-group">
+        <div class="logo-badge">
+          <div class="logo-sun"><i class="fa-solid fa-sun"></i></div>
+          <div>
+            <div class="brand-title">ĐẠI NAM</div>
+            <div class="brand-sub">UNIVERSITY</div>
+          </div>
+        </div>
+        <div class="header-divider"></div>
+        <span class="slogan-tag">HỌC ĐỂ THAY ĐỔI</span>
+      </div>
+
+      <div class="quiz-phase-badge">
+        <i class="fa-solid fa-trophy"></i>
+        <span>VÒNG THI TĂNG TỐC • CÂU 01</span>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-body">
+      <!-- Cột câu hỏi & 4 lựa chọn -->
+      <section class="question-section">
+        <div>
+          <div class="topic-pill">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>Chủ đề: Khái niệm nền quốc phòng toàn dân</span>
+          </div>
+          <div class="question-box">
+            <h2>Theo Luật Quốc phòng năm 2018, bản chất của nền quốc phòng toàn dân được xác định như thế nào?</h2>
+          </div>
+        </div>
+
+        <div class="answers-grid">
+          <div class="answer-card">
+            <span class="opt-letter">A</span>
+            <span class="opt-text">Là sức mạnh quân sự đơn thuần tập trung ở các binh đoàn chủ lực sẵn sàng tiêu diệt địch khi có lệnh.</span>
+          </div>
+
+          <div class="answer-card">
+            <span class="opt-letter">B</span>
+            <span class="opt-text">Là hệ thống các liên minh quân sự khu vực và quốc tế nhằm bảo đảm an ninh biên giới chung.</span>
+          </div>
+
+          <div class="answer-card">
+            <span class="opt-letter">C</span>
+            <span class="opt-text">Là sức mạnh phòng thủ của đất nước, được xây dựng trên nền tảng nhân lực, vật lực, tài chính mang tính toàn dân, toàn diện, độc lập, tự chủ.</span>
+          </div>
+
+          <div class="answer-card">
+            <span class="opt-letter">D</span>
+            <span class="opt-text">Là các hoạt động huy động kinh tế trong thời chiến phục vụ cho hậu cần quân đội.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cột ảnh minh họa -->
+      <section class="media-section">
+        <div class="image-container">
+          <!-- Thay link ảnh quân sự phù hợp -->
+          <img src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=800&q=80" alt="Tư liệu quân sự">
+          <div class="image-overlay-badge">
+            <i class="fa-solid fa-camera"></i>
+            <span>Tư liệu: Tinh thần chiến đấu Điện Biên Phủ</span>
+          </div>
+        </div>
+
+        <div class="pedagogy-tip">
+          <i class="fa-solid fa-lightbulb"></i>
+          <p><strong>Gợi ý thảo luận:</strong> Chú ý cụm từ then chốt về tính chất <em>"toàn dân, toàn diện, độc lập, tự chủ"</em> quy định tại Khoản 1 Điều 2 Luật Quốc phòng.</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-left">
+        <span class="footer-tag">KHOA GIÁO DỤC QPAN</span>
+        <span>•</span>
+        <span>Giảng viên: ThS. Đào Bá Công</span>
+      </div>
+      <div class="footer-right">
+        <span>Hội thi Giảng viên giỏi cấp Trường</span>
+        <span>•</span>
+        <a class="web-link" href="#">dainam.edu.vn</a>
+      </div>
+    </footer>
+  </div>
+
+
+  <!-- ============================================== -->
+  <!-- SLIDE 2: TRẠNG THÁI CÔNG BỐ ĐÁP ÁN CHÍNH XÁC   -->
+  <!-- ============================================== -->
+  <div class="slide">
+    <div class="bg-accent-glow"></div>
+
+    <!-- Header -->
+    <header class="header">
+      <div class="brand-group">
+        <div class="logo-badge">
+          <div class="logo-sun"><i class="fa-solid fa-sun"></i></div>
+          <div>
+            <div class="brand-title">ĐẠI NAM</div>
+            <div class="brand-sub">UNIVERSITY</div>
+          </div>
+        </div>
+        <div class="header-divider"></div>
+        <span class="slogan-tag">HỌC ĐỂ THAY ĐỔI</span>
+      </div>
+
+      <div class="quiz-phase-badge" style="background:#ECFDF5; color:#059669; border-color:#A7F3D0;">
+        <i class="fa-solid fa-circle-check"></i>
+        <span>CÔNG BỐ ĐÁP ÁN • CÂU 01</span>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-body">
+      <!-- Cột câu hỏi & 4 lựa chọn -->
+      <section class="question-section">
+        <div>
+          <div class="topic-pill">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>Chủ đề: Khái niệm nền quốc phòng toàn dân</span>
+          </div>
+          <div class="question-box">
+            <h2>Theo Luật Quốc phòng năm 2018, bản chất của nền quốc phòng toàn dân được xác định như thế nào?</h2>
+          </div>
+        </div>
+
+        <div class="answers-grid">
+          <!-- Đáp án sai làm mờ (opacity) để dồn mắt vào đáp án đúng -->
+          <div class="answer-card faded">
+            <span class="opt-letter">A</span>
+            <span class="opt-text">Là sức mạnh quân sự đơn thuần tập trung ở các binh đoàn chủ lực sẵn sàng tiêu diệt địch khi có lệnh.</span>
+          </div>
+
+          <div class="answer-card faded">
+            <span class="opt-letter">B</span>
+            <span class="opt-text">Là hệ thống các liên minh quân sự khu vực và quốc tế nhằm bảo đảm an ninh biên giới chung.</span>
+          </div>
+
+          <!-- ĐÁP ÁN ĐÚNG BẬT SÁNG NỔI BẬT -->
+          <div class="answer-card correct">
+            <span class="opt-letter"><i class="fa-solid fa-check"></i></span>
+            <span class="opt-text">Là sức mạnh phòng thủ của đất nước, được xây dựng trên nền tảng nhân lực, vật lực, tài chính mang tính toàn dân, toàn diện, độc lập, tự chủ.</span>
+            <span class="correct-tag">
+              <i class="fa-solid fa-circle-check"></i> Đúng
+            </span>
+          </div>
+
+          <div class="answer-card faded">
+            <span class="opt-letter">D</span>
+            <span class="opt-text">Là các hoạt động huy động kinh tế trong thời chiến phục vụ cho hậu cần quân đội.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cột ảnh minh họa & Căn cứ luật -->
+      <section class="media-section">
+        <div class="image-container" style="border: 2px solid #10B981;">
+          <img src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=800&q=80" alt="Tư liệu quân sự">
+          <div class="image-overlay-badge" style="background: rgba(6, 78, 59, 0.85);">
+            <i class="fa-solid fa-award"></i>
+            <span>Chân lý: Lấy dân làm gốc</span>
+          </div>
+        </div>
+
+        <!-- Khối căn cứ luật chốt hạ kiến thức cho sinh viên -->
+        <div class="pedagogy-tip" style="background:#ECFDF5; border-color:#6EE7B7;">
+          <i class="fa-solid fa-scale-balanced" style="color:#059669;"></i>
+          <p style="color:#065F46;"><strong>Căn cứ pháp lý:</strong> Điều 2, Khoản 1 - Luật Quốc phòng 2018 khẳng định sức mạnh quốc phòng bắt nguồn từ khối đại đoàn kết toàn dân tộc dưới sự lãnh đạo của Đảng.</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-left">
+        <span class="footer-tag">KHOA GIÁO DỤC QPAN</span>
+        <span>•</span>
+        <span>Giảng viên: ThS. Đào Bá Công</span>
+      </div>
+      <div class="footer-right">
+        <span>Hội thi Giảng viên giỏi cấp Trường</span>
+        <span>•</span>
+        <a class="web-link" href="#">dainam.edu.vn</a>
+      </div>
+    </footer>
+  </div>
+
+</body>
+</html>
