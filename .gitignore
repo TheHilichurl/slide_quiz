@@ -1,0 +1,22 @@
+# Temporary & generated export files
+exports/
+Slide_Agent_Framework/exports/
+
+# Python cache & virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+
+# OS and Editor metadata
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
+
+# Scratch test files
+test_*.py
+test_*.pptx

@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cổng Quản Lý Bài Giảng Điện Tử GDQP-AN | Đại Học Đại Nam</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Times New Roman', Times, serif !important;
+    }
+
+    :root {
+      --color-primary: #EA580C;
+      --color-primary-dark: #C2410C;
+      --color-secondary: #003882;
+      --color-secondary-dark: #002855;
+      --color-accent-orange: #FF7A00;
+      --color-bg: #F8FAFC;
+      --color-card-bg: #FFFFFF;
+      --color-text-main: #0F172A;
+      --color-text-muted: #475569;
+      --color-border: #E2E8F0;
+      --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 12px 28px -4px rgba(0, 56, 130, 0.12);
+      --shadow-hover: 0 24px 48px -6px rgba(0, 56, 130, 0.22);
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --radius-full: 9999px;
+    }
+
+    body {
+      background-color: var(--color-bg);
+      color: var(--color-text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-image: 
+        radial-gradient(at 10% 10%, rgba(0, 56, 130, 0.04) 0px, transparent 50%),
+        radial-gradient(at 90% 90%, rgba(234, 88, 12, 0.04) 0px, transparent 50%);
+    }
+
+    /* ==========================================================================
+       TOP PORTAL HEADER
+       ========================================================================== */
+    .portal-header {
+      background: var(--color-secondary);
+      border-bottom: 3.5px solid var(--color-primary);
+      padding: 0 60px;
+      height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-left-wrap {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .brand-slogan {
+      font-weight: bold;
+      font-size: 36px;
+      text-transform: uppercase;
+      color: var(--color-accent-orange);
+      letter-spacing: 2px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-slogan::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 40px;
+      background: var(--color-accent-orange);
+      border-radius: 4px;
+    }
+
+    .portal-badge {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #FFFFFF;
+      padding: 6px 18px;
+      border-radius: var(--radius-full);
+      font-size: 17px;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .header-right-wrap {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .digital-clock-display {
+      color: #FED7AA;
+      font-size: 19px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 6px 16px;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .official-logo-img {
+      height: 56px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3));
+    }
+
+    /* ==========================================================================
+       HERO BANNER
+       ========================================================================== */
+    .portal-hero {
+      text-align: center;
+      padding: 50px 30px 36px 30px;
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .hero-badge-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #FFF7ED;
+      border: 1.5px solid #FFEDD5;
+      color: var(--color-primary-dark);
+      padding: 8px 24px;
+      border-radius: var(--radius-full);
+      font-size: 19px;
+      font-weight: bold;
+      margin-bottom: 18px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero-title {
+      font-size: 50px;
+      font-weight: 900;
+      color: var(--color-secondary);
+      line-height: 1.25;
+      margin-bottom: 14px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero-title span {
+      color: var(--color-primary);
+    }
+
+    .hero-subtitle {
+      font-size: 24px;
+      color: var(--color-text-muted);
+      max-width: 900px;
+      margin: 0 auto 30px auto;
+      line-height: 1.5;
+    }
+
+    .hero-stats-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .stat-pill {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #FFFFFF;
+      border: 1.5px solid var(--color-border);
+      padding: 8px 22px;
+      border-radius: var(--radius-full);
+      font-size: 18px;
+      font-weight: bold;
+      color: var(--color-secondary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .stat-pill i {
+      color: var(--color-primary);
+    }
+
+    /* ==========================================================================
+       MAIN DECKS GRID
+       ========================================================================== */
+    .decks-container {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 10px 40px 60px 40px;
+      width: 100%;
+      flex-grow: 1;
+    }
+
+    .decks-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
+
+    .deck-card {
+      background: var(--color-card-bg);
+      border-radius: var(--radius-lg);
+      border: 2px solid var(--color-border);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .deck-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--color-primary);
+    }
+
+    .deck-thumbnail-wrap {
+      height: 290px;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      background: #0B192C;
+    }
+
+    .deck-thumbnail-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.5s ease;
+    }
+
+    .deck-card:hover .deck-thumbnail-img {
+      transform: scale(1.05);
+    }
+
+    .deck-thumb-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0, 56, 130, 0.15) 0%, rgba(0, 20, 60, 0.85) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 24px;
+    }
+
+    .deck-badge-floating {
+      align-self: flex-start;
+      background: var(--color-primary);
+      color: #FFFFFF;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 6px 18px;
+      border-radius: var(--radius-full);
+      letter-spacing: 1px;
+      box-shadow: 0 4px 12px rgba(234, 88, 12, 0.4);
+    }
+
+    .deck-thumb-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .deck-thumb-chip {
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #FFFFFF;
+      padding: 5px 14px;
+      border-radius: var(--radius-full);
+      font-size: 15px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .deck-body {
+      padding: 32px 36px 36px 36px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+
+    .deck-tag-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .deck-tag {
+      font-size: 16px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--color-primary);
+      background: #FFF7ED;
+      padding: 4px 14px;
+      border-radius: 6px;
+    }
+
+    .deck-title {
+      font-size: 32px;
+      font-weight: bold;
+      color: var(--color-secondary);
+      line-height: 1.3;
+      margin-bottom: 14px;
+    }
+
+    .deck-desc {
+      font-size: 20px;
+      color: var(--color-text-muted);
+      line-height: 1.5;
+      margin-bottom: 24px;
+    }
+
+    .deck-highlights {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      background: #F8FAFC;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      margin-bottom: 28px;
+    }
+
+    .highlight-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 17px;
+      font-weight: bold;
+      color: #1E293B;
+    }
+
+    .highlight-item i {
+      color: var(--color-primary);
+      width: 18px;
+      height: 18px;
+    }
+
+    .deck-actions-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: auto;
+    }
+
+    .btn-launch-primary {
+      flex: 1;
+      background: linear-gradient(135deg, var(--color-secondary), #002855);
+      border: 2px solid var(--color-secondary);
+      color: #FFFFFF;
+      text-decoration: none;
+      padding: 16px 28px;
+      border-radius: var(--radius-full);
+      font-size: 21px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      box-shadow: 0 8px 24px rgba(0, 56, 130, 0.25);
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+
+    .btn-launch-primary:hover {
+      background: linear-gradient(135deg, var(--color-primary), #C2410C);
+      border-color: var(--color-primary);
+      box-shadow: 0 10px 30px rgba(234, 88, 12, 0.4);
+      transform: translateY(-2px);
+      color: #FFFFFF;
+    }
+
+    .btn-open-newtab {
+      background: #FFFFFF;
+      border: 2px solid var(--color-border);
+      color: var(--color-secondary);
+      text-decoration: none;
+      padding: 16px 20px;
+      border-radius: var(--radius-full);
+      font-size: 19px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.25s ease;
+    }
+
+    .btn-open-newtab:hover {
+      border-color: var(--color-secondary);
+      background: #F0F5FA;
+      color: var(--color-secondary);
+    }
+
+    /* ==========================================================================
+       SHORTCUTS & GUIDE CARD
+       ========================================================================== */
+    .guide-card-wrap {
+      max-width: 1440px;
+      margin: 0 auto 60px auto;
+      padding: 0 40px;
+      width: 100%;
+    }
+
+    .guide-card {
+      background: #FFFFFF;
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 30px 40px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .guide-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .guide-icon-box {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      background: #FFF7ED;
+      border: 2px solid #FFEDD5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-primary);
+      flex-shrink: 0;
+    }
+
+    .guide-title {
+      font-size: 24px;
+      font-weight: bold;
+      color: var(--color-secondary);
+      margin-bottom: 4px;
+    }
+
+    .guide-desc {
+      font-size: 18px;
+      color: var(--color-text-muted);
+    }
+
+    .shortcut-chips-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .key-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #F1F5F9;
+      border: 1px solid #CBD5E1;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #334155;
+    }
+
+    .key-badge kbd {
+      background: #FFFFFF;
+      border: 1px solid #94A3B8;
+      box-shadow: 0 2px 0 #94A3B8;
+      border-radius: 4px;
+      padding: 2px 7px;
+      font-family: monospace !important;
+      font-size: 14px;
+    }
+
+    /* ==========================================================================
+       PORTAL FOOTER
+       ========================================================================== */
+    .portal-footer {
+      background: var(--color-secondary);
+      border-top: 3.5px solid var(--color-primary);
+      height: 64px;
+      padding: 0 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #FFFFFF;
+      box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.25);
+      position: relative;
+      z-index: 20;
+    }
+
+    .footer-left {
+      font-size: 19px;
+      font-weight: bold;
+      color: #FED7AA;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-center {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 21px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .footer-meta-pill {
+      color: var(--color-accent-orange);
+    }
+
+    .footer-teacher {
+      color: #FFFFFF;
+    }
+
+    .footer-dnu-link {
+      font-size: 19px;
+      font-weight: bold;
+      color: var(--color-accent-orange);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+
+    .footer-dnu-link:hover {
+      color: #FED7AA;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 1024px) {
+      .decks-grid {
+        grid-template-columns: 1fr;
+      }
+      .portal-header {
+        padding: 0 24px;
+      }
+      .portal-footer {
+        padding: 0 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Portal Header -->
+  <header class="portal-header">
+    <div class="header-left-wrap">
+      <div class="brand-slogan">HỌC ĐỂ THAY ĐỔI</div>
+      <div class="portal-badge">
+        <i data-lucide="layers" style="width: 18px; height: 18px;"></i>
+        <span>HỆ THỐNG BÀI GIẢNG ĐIỆN TỬ</span>
+      </div>
+    </div>
+
+    <div class="header-right-wrap">
+      <div class="digital-clock-display" id="portal-live-clock">
+        <i data-lucide="clock" style="width: 18px; height: 18px;"></i>
+        <span id="clock-text">00:00:00</span>
+      </div>
+      <img src="assets/dai-nam-logo-ngang.svg" alt="Trường Đại học Đại Nam" class="official-logo-img">
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="portal-hero">
+    <div class="hero-badge-tag">
+      <i data-lucide="graduation-cap" style="width: 22px; height: 22px;"></i>
+      <span>Khoa Giáo Dục Quốc Phòng & An Ninh • Đại Học Đại Nam</span>
+    </div>
+    <h1 class="hero-title">
+      Hệ Thống Quản Lý <span>Bài Giảng Trình Chiếu</span>
+    </h1>
+    <p class="hero-subtitle">
+      Nền tảng slide điện tử tương tác 2K dành cho học phần GDQP-AN. Tích hợp ngân hàng câu hỏi trắc nghiệm chuẩn hóa, hình ảnh tư liệu sắc nét và công cụ trình chiếu chuyên nghiệp.
+    </p>
+    <div class="hero-stats-row">
+      <div class="stat-pill"><i data-lucide="presentation"></i><span>2 Bộ Bài Giảng Toàn Diện</span></div>
+      <div class="stat-pill"><i data-lucide="check-square"></i><span>20 Câu Hỏi Trắc Nghiệm Trọng Tâm</span></div>
+      <div class="stat-pill"><i data-lucide="monitor"></i><span>40 Slide Chuẩn Canvas 2K</span></div>
+      <div class="stat-pill"><i data-lucide="download"></i><span>Xuất PPTX & PDF Trực Tiếp</span></div>
+    </div>
+  </section>
+
+  <!-- Main Presentation Decks Cards -->
+  <main class="decks-container">
+    <div class="decks-grid">
+
+      <!-- ==================================================================
+           CARD 1: BÀI A3
+           ================================================================== -->
+      <div class="deck-card">
+        <div class="deck-thumbnail-wrap">
+          <img src="assets/vn-military-parade.jpg" alt="Bài A3 - Xây dựng nền quốc phòng toàn dân" class="deck-thumbnail-img">
+          <div class="deck-thumb-overlay">
+            <span class="deck-badge-floating">BÀI HỌC A3</span>
+            <div class="deck-thumb-meta">
+              <span class="deck-thumb-chip"><i data-lucide="file-text" style="width: 15px; height: 15px;"></i> 20 Slide</span>
+              <span class="deck-thumb-chip"><i data-lucide="help-circle" style="width: 15px; height: 15px;"></i> 10 Câu hỏi + Đáp án</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="deck-body">
+          <div>
+            <div class="deck-tag-row">
+              <span class="deck-tag">HỌC PHẦN GDQP-AN</span>
+              <span class="deck-tag" style="background:#EFF6FF; color:#003882;">LUẬT QUỐC PHÒNG 2018</span>
+            </div>
+            <h2 class="deck-title">Bài A3: Xây Dựng Nền Quốc Phòng Toàn Dân & An Ninh Nhân Dân</h2>
+            <p class="deck-desc">
+              Ôn tập kiến thức bản chất nền quốc phòng toàn dân, tiềm lực kinh tế, chính trị, khoa học công nghệ, quân sự và xây dựng thế trận khu vực phòng thủ liên hoàn vững chắc.
+            </p>
+
+            <div class="deck-highlights">
+              <div class="highlight-item"><i data-lucide="check-circle-2"></i><span>10 Câu hỏi trắc nghiệm trọng tâm</span></div>
+              <div class="highlight-item"><i data-lucide="check-circle-2"></i><span>10 Slide phân tích đáp án đúng</span></div>
+              <div class="highlight-item"><i data-lucide="check-circle-2"></i><span>100% Ảnh tư liệu Việt Nam</span></div>
+              <div class="highlight-item"><i data-lucide="check-circle-2"></i><span>Xuất PPTX Soạn Thảo (100% Editable)</span></div>
+            </div>
+          </div>
+
+          <div class="deck-actions-row">
+            <a href="slide_A3_hoan_thien.html" class="btn-launch-primary">
+              <i data-lucide="play-circle" style="width: 24px; height: 24px;"></i>
+              <span>Trình Chiếu Bài A3</span>
+            </a>
+            <a href="slide_A3_hoan_thien.html" target="_blank" rel="noopener noreferrer" class="btn-open-newtab" title="Mở trong tab mới">
+              <i data-lucide="external-link" style="width: 20px; height: 20px;"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================================================================
+           CARD 2: BÀI A4
+           ================================================================== -->
+      <div class="deck-card">
+        <div class="deck-thumbnail-wrap">
+          <img src="assets/war-russia-ukraine.jpg" alt="Bài A4 - Chiến tranh nhân dân bảo vệ Tổ quốc" class="deck-thumbnail-img">
+          <div class="deck-thumb-overlay">
+            <span class="deck-badge-floating">BÀI HỌC A4</span>
+            <div class="deck-thumb-meta">
+              <span class="deck-thumb-chip"><i data-lucide="file-text" style="width: 15px; height: 15px;"></i> 20 Slide</span>
+              <span class="deck-thumb-chip"><i data-lucide="help-circle" style="width: 15px; height: 15px;"></i> 10 Câu hỏi + Đáp án</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="deck-body">
+          <div>
+            <div class="deck-tag-row">
+              <span class="deck-tag">HỌC PHẦN GDQP-AN</span>
+              <span class="deck-tag" style="background:#EFF6FF; color:#003882;">CHIẾN TRANH HIỆN ĐẠI & ĐẠI HỘI XIV</span>
+            </div>
+            <h2 class="deck-title">Bài A4: Chiến Tranh Nhân Dân Bảo Vệ Tổ Quốc Việt Nam XHCN</h2>
+            <p class="deck-desc">
+              Hệ thống câu hỏi cập nhật xung đột hiện đại Nga - Ukraine, tính chất chiến tranh nhân dân, vai trò nòng cốt của LLVTND, tác chiến không gian mạng và định hướng Văn kiện Đại hội XIV.
+            </p>
+
+            <div class="deck-highlights">
+              <div class="highlight-item"><i data-lucide="check-circle-2"></i><span>10 Câu hỏi trắc nghiệm cập nhật</span></div>
+              <div class="highlight-item"><i data-lucide="check-circle-2"></i><span>10 Slide phân tích đáp án đúng</span></div>
+              <div class="highlight-item"><i data-lucide="check-circle-2"></i><span>Ảnh vũ khí, khí tài & LLVTND</span></div>
+              <div class="highlight-item"><i data-lucide="check-circle-2"></i><span>Xuất PPTX Soạn Thảo (100% Editable)</span></div>
+            </div>
+          </div>
+
+          <div class="deck-actions-row">
+            <a href="slide_A4_hoan_thien.html" class="btn-launch-primary">
+              <i data-lucide="play-circle" style="width: 24px; height: 24px;"></i>
+              <span>Trình Chiếu Bài A4</span>
+            </a>
+            <a href="slide_A4_hoan_thien.html" target="_blank" rel="noopener noreferrer" class="btn-open-newtab" title="Mở trong tab mới">
+              <i data-lucide="external-link" style="width: 20px; height: 20px;"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Quick Shortcut Keys Guide -->
+  <section class="guide-card-wrap">
+    <div class="guide-card">
+      <div class="guide-left">
+        <div class="guide-icon-box">
+          <i data-lucide="keyboard" style="width: 32px; height: 32px;"></i>
+        </div>
+        <div>
+          <h3 class="guide-title">Phím Tắt Khi Đang Thuyết Trình</h3>
+          <p class="guide-desc">Sử dụng bàn phím để điều khiển slide chuyên nghiệp và mượt mà trong giờ giảng</p>
+        </div>
+      </div>
+
+      <div class="shortcut-chips-wrap">
+        <span class="key-badge"><kbd>→</kbd> / <kbd>Space</kbd> Slide kế tiếp</span>
+        <span class="key-badge"><kbd>←</kbd> Slide trước</span>
+        <span class="key-badge"><kbd>F</kbd> Toàn màn hình</span>
+        <span class="key-badge"><kbd>H</kbd> Ẩn/Hiện điều khiển</span>
+        <span class="key-badge"><kbd>?</kbd> Trợ giúp</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom Portal Footer -->
+  <footer class="portal-footer">
+    <div class="footer-left">
+      <i data-lucide="shield" style="width: 20px; height: 20px; color:#FB923C;"></i>
+      <span>Khoa GDQP-AN</span>
+    </div>
+
+    <div class="footer-center">
+      <span class="footer-meta-pill">Trường Đại học Đại Nam</span> • <span class="footer-teacher">GV: Đào Bá Công</span>
+    </div>
+
+    <a href="https://dainam.edu.vn" target="_blank" rel="noopener noreferrer" class="footer-dnu-link">
+      <i data-lucide="external-link" style="width: 17px; height: 17px;"></i>
+      <span>dainam.edu.vn</span>
+    </a>
+  </footer>
+
+  <script>
+    // Initialize Lucide Icons
+    if (window.lucide) {
+      window.lucide.createIcons();
+    }
+
+    // Live Digital Clock
+    function updateClock() {
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      const clockEl = document.getElementById('clock-text');
+      if (clockEl) {
+        clockEl.textContent = `${hours}:${minutes}:${seconds}`;
+      }
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+</body>
+</html>
