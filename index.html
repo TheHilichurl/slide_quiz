@@ -218,8 +218,14 @@
 
     .decks-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 40px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    @media (max-width: 1200px) {
+      .decks-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     .deck-card {
@@ -618,10 +624,10 @@
       Nền tảng slide điện tử tương tác 2K dành cho học phần GDQP-AN. Tích hợp ngân hàng câu hỏi trắc nghiệm chuẩn hóa, hình ảnh tư liệu sắc nét và công cụ trình chiếu chuyên nghiệp.
     </p>
     <div class="hero-stats-row">
-      <div class="stat-pill"><i data-lucide="presentation"></i><span>2 Bộ Bài Giảng Toàn Diện</span></div>
-      <div class="stat-pill"><i data-lucide="check-square"></i><span>20 Câu Hỏi Trắc Nghiệm Trọng Tâm</span></div>
-      <div class="stat-pill"><i data-lucide="monitor"></i><span>40 Slide Chuẩn Canvas 2K</span></div>
-      <div class="stat-pill"><i data-lucide="download"></i><span>Xuất PPTX & PDF Trực Tiếp</span></div>
+      <div class="stat-pill"><i data-lucide="presentation"></i><span>3 Bộ Bài Giảng Toàn Diện</span></div>
+      <div class="stat-pill"><i data-lucide="check-square"></i><span>20 Câu Trắc Nghiệm & Chuyên Đề</span></div>
+      <div class="stat-pill"><i data-lucide="monitor"></i><span>61 Slide Chuẩn Canvas 2K</span></div>
+      <div class="stat-pill"><i data-lucide="download"></i><span>Sơ Đồ SVG & Không Gian Mạng</span></div>
     </div>
   </section>
 
@@ -715,6 +721,52 @@
               <span>Trình Chiếu Bài A4</span>
             </a>
             <a href="slide_A4_hoan_thien.html" target="_blank" rel="noopener noreferrer" class="btn-open-newtab" title="Mở trong tab mới">
+              <i data-lucide="external-link" style="width: 20px; height: 20px;"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================================================================
+           CARD 3: CHUYÊN ĐỀ MỚI - TRUYỀN THỐNG & NGHỆ THUẬT ĐÁNH GIẶC
+           ================================================================== -->
+      <div class="deck-card" style="border-color: #EA580C; box-shadow: 0 12px 30px rgba(234, 88, 12, 0.15);">
+        <div class="deck-thumbnail-wrap">
+          <img src="slide_new/assets/vn-cyber-command.jpg" alt="Chuyên đề Truyền thống & Nghệ thuật đánh giặc" class="deck-thumbnail-img">
+          <div class="deck-thumb-overlay">
+            <span class="deck-badge-floating" style="background: linear-gradient(135deg, #EA580C, #C2410C);">CHUYÊN ĐỀ MỚI</span>
+            <div class="deck-thumb-meta">
+              <span class="deck-thumb-chip"><i data-lucide="file-text" style="width: 15px; height: 15px;"></i> 21 Slide</span>
+              <span class="deck-thumb-chip"><i data-lucide="cpu" style="width: 15px; height: 15px;"></i> Tích hợp CNTT</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="deck-body">
+          <div>
+            <div class="deck-tag-row">
+              <span class="deck-tag" style="background:#FFF7ED; color:#EA580C; border: 1px solid #FFEDD5;">CHUYÊN ĐỀ GDQP-AN</span>
+              <span class="deck-tag" style="background:#ECFDF5; color:#065F46; border: 1px solid #D1FAE5;">AN NINH MẠNG 4.0</span>
+            </div>
+            <h2 class="deck-title">Truyền Thống & Nghệ Thuật Đánh Giặc Của Ông Cha Ta</h2>
+            <p class="deck-desc">
+              Cội nguồn Văn Lang - Âu Lạc, nỏ thần Cổ Loa, bãi cọc Bạch Đằng, 4 trụ cột quân sự tinh hoa và bài học vận dụng sâu sắc vào an ninh mạng, Zero Trust và chủ quyền không gian mạng số.
+            </p>
+
+            <div class="deck-highlights">
+              <div class="highlight-item"><i data-lucide="check-circle-2" style="color: #EA580C;"></i><span>21 Slide thiết kế hiện đại, chữ to rõ</span></div>
+              <div class="highlight-item"><i data-lucide="check-circle-2" style="color: #EA580C;"></i><span>Sơ đồ SVG Cổ Loa & Thủy chiến Bạch Đằng</span></div>
+              <div class="highlight-item"><i data-lucide="check-circle-2" style="color: #EA580C;"></i><span>100% Ảnh tư liệu lịch sử & Quân sự Việt Nam</span></div>
+              <div class="highlight-item"><i data-lucide="check-circle-2" style="color: #EA580C;"></i><span>Bảng ma trận vận dụng vào Kiến trúc ATTT</span></div>
+            </div>
+          </div>
+
+          <div class="deck-actions-row">
+            <a href="slide_new/index.html" class="btn-launch-primary" style="background: linear-gradient(135deg, #EA580C, #C2410C);">
+              <i data-lucide="play-circle" style="width: 24px; height: 24px;"></i>
+              <span>Trình Chiếu Chuyên Đề Mới</span>
+            </a>
+            <a href="slide_new/index.html" target="_blank" rel="noopener noreferrer" class="btn-open-newtab" title="Mở trong tab mới">
               <i data-lucide="external-link" style="width: 20px; height: 20px;"></i>
             </a>
           </div>
