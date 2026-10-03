@@ -2,8 +2,11 @@
 
 > **Nền tảng slide bài giảng điện tử tương tác 2K kết hợp công cụ trắc nghiệm và bộ chuyển đổi xuất file PowerPoint (.pptx) có thể chỉnh sửa 100% (Native Editable PPTX).**
 
-🌐 **Trang Web Trực Tuyến (Live Website):**  
-👉 **[https://thehilichurl.github.io/slide_quiz/](https://thehilichurl.github.io/slide_quiz/)**
+🌐 **Liên Kết Truy Cập Trực Tuyến (Live Websites - Dành cho Máy tính & Điện thoại):**  
+* 🚀 **Chuyên Đề Mới (Slide New):** 👉 **[https://thehilichurl.github.io/slide_quiz/slide_new/](https://thehilichurl.github.io/slide_quiz/slide_new/)** *(Mở trực tiếp trên điện thoại & máy tính)*
+* 🏛️ **Cổng Thông Tin Quản Lý (Hub Portal):** 👉 **[https://thehilichurl.github.io/slide_quiz/](https://thehilichurl.github.io/slide_quiz/)**
+* 📖 **Bài Giảng Ôn Tập A3:** 👉 **[https://thehilichurl.github.io/slide_quiz/slide_A3_hoan_thien.html](https://thehilichurl.github.io/slide_quiz/slide_A3_hoan_thien.html)**
+* 📖 **Bài Giảng Ôn Tập A4:** 👉 **[https://thehilichurl.github.io/slide_quiz/slide_A4_hoan_thien.html](https://thehilichurl.github.io/slide_quiz/slide_A4_hoan_thien.html)**
 
 ---
 
@@ -11,22 +14,21 @@
 
 1. **Chuẩn Mực Thiết Kế Đại Nam University ("Đại Nam Style"):**
    - Bộ nhận diện thương hiệu chuẩn xác: Xanh Hoàng Gia (`#003882`), Cam Năng Động (`#EA580C`), Cam Điểm Nhấn Slogan (`#FF7A00`), Xanh Lục Emerald (`#10B981`).
-   - Font chữ chuẩn học thuật: `Times New Roman` cho toàn bộ slide và file xuất.
    - Slogan bản quyền nổi bật trên thanh Header: `| HỌC ĐỂ THAY ĐỔI`.
+   - Bài giảng mới `slide_new` sử dụng cặp font hiện đại **Plus Jakarta Sans** & **Be Vietnam Pro** với cỡ chữ to rõ, chuẩn chiếu hội trường và đọc tốt trên thiết bị di động.
 
 2. **Khung Hình Chiếu Chuẩn 16:9 (1920 × 1080 px):**
-   - Canvas cố định tự động co giãn thông minh (`scale`) vừa vặn mọi tỷ lệ màn hình máy tính, máy chiếu hội trường hay màn hình LED.
-   - Tối ưu kích cỡ hiển thị: Tiêu đề 42px bold, Chữ cái phương án 35px bold, Nội dung đáp án 33px.
+   - Canvas cố định tự động co giãn thông minh (`scale`) vừa vặn mọi tỷ lệ màn hình máy tính, máy chiếu hội trường, màn hình LED hay điện thoại di động.
+   - Tối ưu kích cỡ hiển thị: Tiêu đề 42-48px bold, Nội dung 24-28px.
 
-3. **Công Cụ Xuất PowerPoint Soạn Thảo (100% Native Editable PPTX):**
-   - Chuẩn hoá trực tiếp giữa các thẻ HTML/CSS DOM với các đối tượng thiết kế nguyên bản của Microsoft PowerPoint:
-     - Thẻ card $\rightarrow$ `ROUNDED_RECTANGLE` (Shapes).
-     - Tiêu đề, nội dung $\rightarrow$ `TEXT_BOX` (cho phép click đúp sửa từng ký tự, font chữ, màu sắc).
-     - Chữ cái đáp án A/B/C/D $\rightarrow$ `OVAL` & `TEXT_BOX`.
-     - Ảnh minh hoạ tư liệu $\rightarrow$ `PICTURE` được bo góc vi mô 18px và viền trùng khít tuyệt đối với mép ảnh (100% coincident, không hở viền trắng, không méo oval).
-   - Tự động loại bỏ đồng hồ đếm giờ trên bản PPTX, giữ lại chân trang sạch đẹp với liên kết clickable `dainam.edu.vn`.
+3. **Tích Hợp Sơ Đồ Vector SVG & Hình Ảnh Tư Liệu 100% Việt Nam:**
+   - Sơ đồ Thành Cổ Loa 3 vòng xoáy trôn ốc & Nỏ thần Liên Châu.
+   - Sơ đồ chiến thuật sông Bạch Đằng: quy luật thủy triều, bãi cọc nhọn bọc sắt.
+   - Sơ đồ 4 trụ cột quân sự truyền thống và chu trình "Ngụ binh ư nông".
+   - Bảng ma trận đối sánh Binh pháp cổ xưa $\leftrightarrow$ Kiến trúc An toàn thông tin (Zero Trust, Threat Hunting, Honeypot, Cloud DDoS).
 
 4. **Nội Dung Học Phần Toàn Diện:**
+   - **Chuyên đề Mới (slide_new):** Truyền thống & Nghệ thuật đánh giặc của ông cha ta (21 slide chuyên sâu, phân tích cội nguồn, 4 trụ cột và liên hệ sinh viên CNTT).
    - **Bài A3:** Xây dựng nền quốc phòng toàn dân và an ninh nhân dân (10 câu trắc nghiệm trọng tâm + 10 slide phân tích đáp án đúng).
    - **Bài A4:** Chiến tranh nhân dân bảo vệ Tổ quốc Việt Nam XHCN (Cập nhật xung đột Nga - Ukraine, công nghệ cao, Đại hội XIV).
 
@@ -36,21 +38,16 @@
 
 ```text
 slide_quiz/
-├── index.html                      # Cổng thông tin (Hub Portal) quản lý bài giảng
+├── index.html                      # Cổng thông tin (Hub Portal) quản lý bài giảng (3 bộ deck)
+├── slide_new/                      # [MỚI] Chuyên đề Truyền thống & Nghệ thuật đánh giặc (21 Slide)
+│   ├── index.html                  # Giao diện trình chiếu tương tác hiện đại
+│   └── assets/                     # Tài nguyên styles.css, sơ đồ SVG và ảnh tư liệu Việt Nam
 ├── slide_A3_hoan_thien.html        # Slide trình chiếu tương tác Bài A3 (20 slide)
 ├── slide_A4_hoan_thien.html        # Slide trình chiếu tương tác Bài A4 (20 slide)
-├── assets/
-│   ├── styles.css                  # Bảng kiểu CSS chính (Đại Nam Style, HUD, Responsive)
-│   ├── html_to_pptx_converter.js   # Bộ chuyển đổi DOM sang PowerPoint có thể soạn thảo
-│   ├── dai-nam-logo-ngang.svg      # Logo chính thức Trường Đại học Đại Nam
-│   ├── favicon.svg                 # Favicon biểu tượng Đại Nam
-│   └── vn-*.jpg, war-*.jpg         # Kho ảnh tư liệu lịch sử, quân sự độ phân giải cao
-├── Slide_Agent_Framework/
-│   ├── scripts/                    # Scripts tự động hoá xuất PPTX, render kiểm thử
-│   ├── templates/                  # Bộ mẫu layout trình chiếu
-│   └── docs/                       # Tài liệu thiết kế chuẩn hoá HTML -> PPTX
-├── .gitignore                      # Loại trừ file tạm, cache và file binary lớn
-└── README.md                       # Tài liệu hướng dẫn sử dụng và triển khai
+├── assets/                         # Thư viện ảnh, kiểu dáng gốc và bộ xuất PPTX
+├── Slide_Agent_Framework/          # Công cụ framework hỗ trợ chuyển đổi & render
+├── raw.md                          # Tài liệu cốt lõi nội dung chuyên đề
+└── README.md                       # Tài liệu hướng dẫn, liên kết trực tuyến và triển khai
 ```
 
 ---
