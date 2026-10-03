@@ -1,8 +1,8 @@
 /* ==========================================================================
-   DAI NAM UNIVERSITY - GDQP-AN PRESENTATION STYLESHEET (PROJECTION OPTIMIZED 30PX)
+   DAI NAM UNIVERSITY - GDQP-AN PRESENTATION STYLESHEET (PROJECTION OPTIMIZED)
    Style Identity: "HỌC ĐỂ THAY ĐỔI" - ĐẠI NAM STYLE
    Colors: Energetic Orange #EA580C | Imperial Blue #003882 | Accent Orange #FF7A00 | Deep Slate #0F172A
-   Fonts: Plus Jakarta Sans / Be Vietnam Pro (Native Vietnamese, Crisp Projection 30px+)
+   Fonts: Plus Jakarta Sans (Headings) + Be Vietnam Pro (Body) - Proportional & No Overflow
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap');
@@ -34,11 +34,10 @@
   --shadow-sm: 0 4px 8px rgba(0, 0, 0, 0.04);
   --shadow-md: 0 10px 25px rgba(0, 56, 130, 0.10);
   --shadow-lg: 0 18px 45px rgba(0, 56, 130, 0.16);
-  --shadow-hover: 0 20px 48px rgba(0, 56, 130, 0.22);
 
   --radius-sm: 10px;
-  --radius-md: 16px;
-  --radius-lg: 20px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
   --radius-full: 9999px;
 
   --font-heading: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
@@ -58,7 +57,7 @@ html, body {
   overflow: hidden;
   background-color: #050B14;
   font-family: var(--font-body);
-  font-size: 30px;
+  font-size: 28px;
   color: var(--color-text-main);
   user-select: none;
 }
@@ -118,7 +117,7 @@ html, body {
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
-  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   transform: scale(0.985);
   background: var(--color-bg-light);
   overflow: hidden;
@@ -137,15 +136,15 @@ html, body {
   position: absolute;
   top: 86px;
   right: 0;
-  width: 850px;
-  height: 850px;
-  background: radial-gradient(circle at 75% 25%, rgba(234, 88, 12, 0.08) 0%, rgba(0, 56, 130, 0.04) 45%, transparent 70%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle at 75% 25%, rgba(234, 88, 12, 0.07) 0%, rgba(0, 56, 130, 0.03) 45%, transparent 70%);
   pointer-events: none;
   z-index: 1;
 }
 
 /* ==========================================================================
-   MANDATORY HEADER (Cobalt Blue Background)
+   MANDATORY HEADER (86px, Cobalt Blue #003882)
    ========================================================================== */
 .slide-header {
   position: absolute;
@@ -153,7 +152,7 @@ html, body {
   left: 0;
   right: 0;
   height: 86px;
-  padding: 0 54px;
+  padding: 0 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -166,11 +165,11 @@ html, body {
 .header-left {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 20px;
 }
 
 .official-logo-img {
-  height: 52px;
+  height: 50px;
   width: auto;
   object-fit: contain;
   filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
@@ -179,7 +178,7 @@ html, body {
 
 .header-divider {
   width: 7px;
-  height: 38px;
+  height: 36px;
   background: var(--color-accent-orange);
   border-radius: 4px;
   flex-shrink: 0;
@@ -188,7 +187,7 @@ html, body {
 .brand-slogan {
   font-family: var(--font-heading) !important;
   font-weight: 800;
-  font-size: 34px !important;
+  font-size: 32px !important;
   text-transform: uppercase;
   color: var(--color-accent-orange) !important;
   letter-spacing: 2px;
@@ -201,16 +200,16 @@ html, body {
 .header-right {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
 }
 
 .header-topic-pill {
   background: rgba(255, 255, 255, 0.14);
   border: 1px solid rgba(255, 255, 255, 0.25);
   color: #FFFFFF;
-  padding: 6px 18px;
+  padding: 5px 16px;
   border-radius: var(--radius-full);
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 700;
   font-family: var(--font-heading);
   display: flex;
@@ -221,16 +220,16 @@ html, body {
 .header-slide-pill {
   background: var(--color-primary);
   color: #FFFFFF;
-  padding: 6px 16px;
+  padding: 5px 15px;
   border-radius: var(--radius-full);
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 800;
   font-family: var(--font-heading);
   box-shadow: 0 2px 10px rgba(234, 88, 12, 0.4);
 }
 
 /* ==========================================================================
-   MANDATORY FOOTER (Cobalt Blue Background with Orange Accent Border)
+   MANDATORY FOOTER (62px, Cobalt Blue #003882)
    ========================================================================== */
 .slide-footer {
   position: absolute;
@@ -238,7 +237,7 @@ html, body {
   left: 0;
   right: 0;
   height: 62px;
-  padding: 0 54px;
+  padding: 0 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -259,12 +258,12 @@ html, body {
   align-items: center;
   gap: 8px;
   font-family: var(--font-heading) !important;
-  font-size: 19px !important;
+  font-size: 18px !important;
   font-weight: bold !important;
   color: #FFFFFF !important;
   background: rgba(255, 255, 255, 0.14) !important;
   border: 1px solid rgba(255, 255, 255, 0.25) !important;
-  padding: 5px 16px !important;
+  padding: 4px 14px !important;
   border-radius: 30px !important;
 }
 
@@ -274,7 +273,7 @@ html, body {
 
 .footer-dnu-link {
   font-family: var(--font-heading) !important;
-  font-size: 19px !important;
+  font-size: 18px !important;
   font-weight: bold !important;
   color: #FB923C !important;
   text-decoration: none !important;
@@ -294,7 +293,7 @@ html, body {
   left: 50%;
   transform: translateX(-50%);
   font-family: var(--font-heading) !important;
-  font-size: 21px !important;
+  font-size: 20px !important;
   font-weight: bold !important;
   color: #FFFFFF !important;
   display: flex;
@@ -320,7 +319,7 @@ html, body {
 }
 
 /* ==========================================================================
-   SLIDE BODY LAYOUT (932px Height)
+   SLIDE BODY LAYOUT (932px Exact Height - NO OVERFLOW)
    ========================================================================== */
 .slide-body {
   position: absolute;
@@ -330,22 +329,25 @@ html, body {
   right: 0;
   padding: 0;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
   z-index: 10;
 }
 
 /* ==========================================================================
-   QUIZ / SECTION CONTAINER (TWO-COLUMN RATIO 65% / 35%)
+   QUIZ CONTAINER: 2 COLUMNS (65% Content / 35% Visual)
    ========================================================================== */
 .quiz-container {
   display: flex;
   justify-content: space-between;
-  align-items: stretch;
+  align-items: center;
   width: 100%;
   height: 100%;
-  padding: 24px 54px 20px 54px;
+  max-height: 932px;
+  padding: 24px 50px;
   gap: 36px;
+  box-sizing: border-box;
 }
 
 .quiz-content-col {
@@ -353,25 +355,28 @@ html, body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  min-height: 0;
+  overflow: hidden;
 }
 
 .quiz-meta-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
+  flex-shrink: 0;
 }
 
 .quiz-badge-question {
   font-family: var(--font-heading) !important;
-  font-size: 27.5px !important;
+  font-size: 24px !important;
   font-weight: bold;
   color: #FFFFFF;
   background: var(--color-secondary);
-  padding: 7px 22px;
+  padding: 6px 18px;
   border-radius: var(--radius-sm);
   letter-spacing: 0.5px;
-  box-shadow: 0 4px 12px rgba(0, 56, 130, 0.25);
+  box-shadow: 0 4px 10px rgba(0, 56, 130, 0.2);
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -379,11 +384,11 @@ html, body {
 
 .quiz-topic-badge {
   font-family: var(--font-heading) !important;
-  font-size: 25px !important;
+  font-size: 23px !important;
   font-weight: bold;
   color: var(--color-primary-dark);
   background: #FFF7ED;
-  padding: 7px 22px;
+  padding: 6px 18px;
   border-radius: var(--radius-sm);
   border: 1.5px solid #FFEDD5;
   display: inline-flex;
@@ -393,43 +398,46 @@ html, body {
 
 .quiz-question-title {
   font-family: var(--font-heading) !important;
-  font-size: 42px !important;
+  font-size: 38px !important;
   font-weight: 800;
   color: var(--color-secondary-dark);
-  line-height: 1.32;
-  margin-bottom: 20px;
+  line-height: 1.25;
+  margin-bottom: 16px;
+  flex-shrink: 0;
 }
 
 .quiz-options-list {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
+  justify-content: center;
 }
 
 .quiz-option-card {
   background: #FFFFFF;
   border: 2px solid var(--color-border);
   border-radius: var(--radius-md);
-  padding: 16px 24px;
+  padding: 12px 20px;
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
   transition: all 0.2s ease;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+  box-sizing: border-box;
 }
 
 .quiz-option-card:hover {
   border-color: var(--color-primary);
   transform: translateX(4px);
-  box-shadow: 0 6px 16px rgba(0, 56, 130, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 56, 130, 0.08);
 }
 
 .quiz-option-card .opt-letter {
   font-family: var(--font-heading) !important;
   font-weight: 800;
-  font-size: 35px !important;
+  font-size: 28px !important;
   color: var(--color-secondary);
-  width: 44px;
+  width: 38px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -438,11 +446,12 @@ html, body {
 
 .quiz-option-card .opt-text {
   font-family: var(--font-body) !important;
-  font-size: 32px !important;
+  font-size: 27px !important;
   color: #1E293B;
   margin: 0;
-  line-height: 1.38;
+  line-height: 1.34;
   font-weight: 500;
+  flex: 1;
 }
 
 .quiz-option-card .opt-text strong {
@@ -452,8 +461,8 @@ html, body {
 
 .quiz-option-card.highlight-card {
   background: #FFF7ED;
-  border: 3px solid var(--color-primary);
-  box-shadow: 0 8px 24px rgba(234, 88, 12, 0.18);
+  border: 2.5px solid var(--color-primary);
+  box-shadow: 0 6px 18px rgba(234, 88, 12, 0.15);
 }
 
 .quiz-option-card.highlight-card .opt-letter {
@@ -465,8 +474,38 @@ html, body {
   font-weight: 600;
 }
 
+/* 4-card variant (Slide 18) */
+.quiz-options-list.four-cards {
+  gap: 10px;
+}
+.quiz-options-list.four-cards .quiz-option-card {
+  padding: 10px 18px;
+  gap: 14px;
+}
+.quiz-options-list.four-cards .quiz-option-card .opt-text {
+  font-size: 26px !important;
+  line-height: 1.32;
+}
+
+/* 5-card variant (Slide 2) */
+.quiz-options-list.five-cards {
+  gap: 8px;
+}
+.quiz-options-list.five-cards .quiz-option-card {
+  padding: 8px 16px;
+  gap: 12px;
+}
+.quiz-options-list.five-cards .quiz-option-card .opt-text {
+  font-size: 24.5px !important;
+  line-height: 1.3;
+}
+.quiz-options-list.five-cards .quiz-option-card .opt-letter {
+  font-size: 24px !important;
+  width: 32px;
+}
+
 /* ==========================================================================
-   RIGHT COLUMN: VISUAL MEDIA CARD (FULL HEIGHT 780PX)
+   RIGHT COLUMN: VISUAL MEDIA CARD (HEIGHT 720PX TO FIT COMFORTABLY)
    ========================================================================== */
 .quiz-visual-col {
   flex: 0 0 35%;
@@ -481,9 +520,9 @@ html, body {
 
 .quiz-visual-card {
   width: 100%;
-  height: 780px;
-  max-height: 100%;
-  border-radius: 18px;
+  height: 720px;
+  max-height: 720px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
   position: relative;
   background: #0B192C;
@@ -494,8 +533,8 @@ html, body {
 }
 
 .quiz-visual-card.orange-border {
-  border: 3.5px solid var(--color-primary);
-  box-shadow: 0 12px 35px rgba(234, 88, 12, 0.25);
+  border: 3px solid var(--color-primary);
+  box-shadow: 0 10px 30px rgba(234, 88, 12, 0.22);
 }
 
 .quiz-visual-img {
@@ -519,44 +558,46 @@ html, body {
   left: 0;
   right: 0;
   background: linear-gradient(0deg, rgba(0, 34, 68, 0.96) 0%, rgba(0, 34, 68, 0.75) 65%, transparent 100%);
-  padding: 18px 24px;
+  padding: 16px 20px;
   color: #FFFFFF;
-  font-size: 22px;
+  font-size: 21px;
   font-weight: 600;
   line-height: 1.35;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .visual-bottom-caption i {
   color: var(--color-accent-orange);
   flex-shrink: 0;
-  width: 26px;
-  height: 26px;
+  width: 24px;
+  height: 24px;
 }
 
 /* ==========================================================================
-   SVG DIAGRAM CARD IN RIGHT COLUMN (780PX FULL HEIGHT)
+   SVG DIAGRAM CARD (HEIGHT 720PX TO FIT COMFORTABLY)
    ========================================================================== */
 .diagram-visual-card {
   width: 100%;
-  height: 780px;
-  border-radius: 18px;
+  height: 720px;
+  max-height: 720px;
+  border-radius: var(--radius-lg);
   background: #FFFFFF;
-  border: 2.5px solid var(--color-secondary);
+  border: 2px solid var(--color-secondary);
   box-shadow: var(--shadow-md);
-  padding: 16px;
+  padding: 14px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .diagram-card-title {
   font-family: var(--font-heading);
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 800;
   color: var(--color-secondary);
   display: flex;
@@ -564,6 +605,7 @@ html, body {
   gap: 10px;
   padding-bottom: 8px;
   border-bottom: 2px solid #E2E8F0;
+  flex-shrink: 0;
 }
 
 .diagram-card-svg-wrap {
@@ -574,11 +616,13 @@ html, body {
   align-items: center;
   justify-content: center;
   min-height: 0;
+  overflow: hidden;
 }
 
 .diagram-card-svg-wrap svg {
   width: 100%;
   height: 100%;
+  max-height: 100%;
 }
 
 /* ==========================================================================
@@ -587,39 +631,41 @@ html, body {
 .matrix-container-full {
   width: 100%;
   height: 100%;
-  padding: 24px 54px 20px 54px;
+  max-height: 932px;
+  padding: 20px 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .matrix-big-table {
   width: 100%;
-  height: 780px;
   border-collapse: separate;
   border-spacing: 0;
   background: #FFFFFF;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: var(--shadow-lg);
-  border: 2.5px solid var(--color-secondary);
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--color-secondary);
 }
 
 .matrix-big-table th {
   background: var(--color-secondary);
   color: #FFFFFF;
   font-family: var(--font-heading);
-  font-size: 30px;
+  font-size: 26px;
   font-weight: 800;
-  padding: 20px 30px;
+  padding: 12px 20px;
   text-align: left;
-  border-bottom: 4px solid var(--color-primary);
+  border-bottom: 3.5px solid var(--color-primary);
 }
 
 .matrix-big-table td {
-  padding: 22px 30px;
-  font-size: 28px;
-  line-height: 1.45;
+  padding: 12px 20px;
+  font-size: 24px;
+  line-height: 1.35;
   color: var(--color-text-main);
   border-bottom: 1.5px solid #E2E8F0;
   vertical-align: middle;
@@ -635,10 +681,10 @@ html, body {
 
 .matrix-big-tactic {
   font-family: var(--font-heading);
-  font-size: 32px;
+  font-size: 26px;
   font-weight: 800;
   color: var(--color-secondary);
-  width: 32%;
+  width: 28%;
 }
 
 .matrix-tactic-pill {
@@ -646,22 +692,22 @@ html, body {
   background: #FFF7ED;
   color: #C2410C;
   border: 1.5px solid #FFEDD5;
-  padding: 4px 14px;
+  padding: 3px 12px;
   border-radius: var(--radius-full);
-  font-size: 21px;
+  font-size: 18px;
   font-weight: 700;
-  margin-top: 8px;
+  margin-top: 4px;
 }
 
 .matrix-big-tech {
-  width: 68%;
+  width: 72%;
 }
 
 .matrix-big-tech strong {
-  font-size: 30px;
+  font-size: 25px;
   color: var(--color-primary-dark);
   display: block;
-  margin-bottom: 6px;
+  margin-bottom: 3px;
 }
 
 /* ==========================================================================
@@ -670,34 +716,37 @@ html, body {
 .punchlines-wrap {
   width: 100%;
   height: 100%;
-  padding: 24px 54px 20px 54px;
+  max-height: 932px;
+  padding: 20px 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 24px;
+  gap: 16px;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .punchline-big-card {
   background: #FFFFFF;
   border: 2px solid var(--color-border);
-  border-left: 10px solid var(--color-primary);
-  border-radius: var(--radius-lg);
-  padding: 28px 36px;
-  box-shadow: var(--shadow-md);
+  border-left: 8px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  padding: 18px 26px;
+  box-shadow: var(--shadow-sm);
   display: flex;
   align-items: center;
-  gap: 28px;
-  transition: transform 0.3s ease;
+  gap: 22px;
+  transition: transform 0.25s ease;
 }
 
 .punchline-big-card:hover {
-  transform: translateX(10px);
+  transform: translateX(8px);
   border-color: var(--color-primary);
 }
 
 .punchline-index-badge {
-  width: 68px;
-  height: 68px;
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
   color: #FFFFFF;
@@ -705,15 +754,15 @@ html, body {
   align-items: center;
   justify-content: center;
   font-family: var(--font-heading);
-  font-size: 34px;
+  font-size: 26px;
   font-weight: 800;
   flex-shrink: 0;
-  box-shadow: 0 6px 18px rgba(234, 88, 12, 0.4);
+  box-shadow: 0 4px 14px rgba(234, 88, 12, 0.35);
 }
 
 .punchline-big-text {
-  font-size: 33px;
-  line-height: 1.48;
+  font-size: 26px;
+  line-height: 1.42;
   color: var(--color-secondary-dark);
   font-weight: 600;
   font-style: italic;
@@ -725,7 +774,7 @@ html, body {
 }
 
 /* ==========================================================================
-   FLOATING HUD CONTROLS (EXACT SAME MECHANICS AS SAMPLE SLIDES)
+   FLOATING HUD CONTROLS
    ========================================================================== */
 #hud-controls {
   position: fixed;
